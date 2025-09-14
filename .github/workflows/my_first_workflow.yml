@@ -5,8 +5,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, ubuntu-20.04]
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
       - name: echo a string
         run: echo "Hello world"
       - name: multiline script
